@@ -358,7 +358,7 @@
   "RAG_MODE_STANDARD": "RAG มาตรฐาน",
   "RAG_MODE_PHISON_KM": "KV Cache ของ aiDAPTIV+",
   "PHISON_KM_CONTEXT_HINT": "KV Cache ของ aiDAPTIV+ ต้องใช้ขนาดบริบทอย่างน้อย 16384",
-  "PHISON_KM_UNAVAILABLE_BUILD_HINT": "เปิดใช้บิลด์ Llama.cpp ของ Phison aiDAPTIV+ (ถ่ายโอนไปยัง SSD) เพื่อใช้คุณสมบัตินี้",
+  "PHISON_KM_UNAVAILABLE_BACKEND_HINT": "เลือกแบ็กเอนด์ Llama.cpp เพื่อใช้คุณสมบัตินี้",
   "PHISON_KM_UNAVAILABLE_CONTEXT_HINT": "ขนาดบริบทสูงสุดของโมเดลนี้ต่ำกว่า 16384 ที่ KV Cache ของ aiDAPTIV+ ต้องการ",
   "ANSWER_METRICS": "เมตริก",
   "ANSWER_FONT_SIZE": "ขนาดตัวอักษร",

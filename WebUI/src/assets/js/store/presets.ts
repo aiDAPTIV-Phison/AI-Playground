@@ -894,15 +894,12 @@ export const usePresets = defineStore(
       const hasNpuDevice = backendServices.info
         .find((s) => s.serviceName === 'openvino-backend')
         ?.devices?.some((d) => d.id.includes('NPU'))
-      // Phison is "usable" only when the system offers it, the binary is installed,
-      // and the SSD-offload variant is the active build. This keeps an inactive Phison
-      // preset out of default-preset auto-selection.
-      const phisonUsable =
-        backendServices.phisonSsdDetected &&
-        (backendServices.info.find((s) => s.serviceName === 'llamacpp-backend')
-          ?.llamaCppPhisonArtifactReady ??
-          false) &&
-        backendServices.llamaCppBuildVariant === 'ssd-offload'
+      // Phison is "usable" wherever the aiDAPTIV™ SSD is present. The preset runs on
+      // either Llama.cpp build — the SSD-offload build only makes very large models
+      // cheaper to serve, it is not required for the preset (nor for its KM retrieval,
+      // see phisonKmRag.phisonKmAvailable) — so the install state and the active build
+      // variant are deliberately not part of this gate.
+      const phisonUsable = backendServices.phisonSsdDetected
 
       return presets.value.filter((p) => {
         if (p.type !== 'chat') return false

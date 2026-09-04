@@ -468,21 +468,18 @@ const dialogStore = useDialogStore()
 // non-selectable (with a reason), unlike presets that are entirely unavailable on
 // this system — those are filtered out upstream (e.g. aiDAPTIV™/Phison without the
 // SSD).
-const phisonUsable = computed(
-  () =>
-    backendServices.phisonSsdDetected &&
-    (backendServices.info.find((s) => s.serviceName === 'llamacpp-backend')
-      ?.llamaCppPhisonArtifactReady ??
-      false) &&
-    backendServices.llamaCppBuildVariant === 'ssd-offload',
-)
+// Mirrors presets.selectableChatTypePresets: the aiDAPTIV™ preset needs the SSD and
+// nothing else — either Llama.cpp build can serve it. Presets without the SSD are
+// filtered out upstream, so in practice this gate stays open; it is kept as a guard
+// for any path that reaches presetGate with an unfiltered list.
+const phisonUsable = computed(() => backendServices.phisonSsdDetected)
 
 /** Whether a picker preset is currently selectable, plus why not when disabled. */
 function presetGate(preset: Preset): { enabled: boolean; reason?: string } {
   if (preset.type === 'chat' && (preset as ChatPreset).requiresPhison) {
     return phisonUsable.value
       ? { enabled: true }
-      : { enabled: false, reason: 'Install and activate the aiDAPTIV™ build to use this preset.' }
+      : { enabled: false, reason: 'An aiDAPTIV™ SSD is required to use this preset.' }
   }
   if (preset.name === HOME_AGENT_CHAT_PRESET_NAME) {
     if (!homeAgent.masterEnabled) {

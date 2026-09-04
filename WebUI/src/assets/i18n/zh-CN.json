@@ -358,7 +358,7 @@
   "RAG_MODE_STANDARD": "标准 RAG",
   "RAG_MODE_PHISON_KM": "aiDAPTIV+ KV Cache",
   "PHISON_KM_CONTEXT_HINT": "aiDAPTIV+ KV Cache 要求上下文大小至少为 16384。",
-  "PHISON_KM_UNAVAILABLE_BUILD_HINT": "启用 Phison aiDAPTIV+（SSD 卸载）Llama.cpp 构建以使用此功能。",
+  "PHISON_KM_UNAVAILABLE_BACKEND_HINT": "请选择 Llama.cpp 后端以使用此功能。",
   "PHISON_KM_UNAVAILABLE_CONTEXT_HINT": "此模型的最大上下文大小低于 aiDAPTIV+ KV Cache 所需的 16384。",
   "ANSWER_METRICS": "指标",
   "ANSWER_FONT_SIZE": "字号",

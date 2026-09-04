@@ -358,7 +358,7 @@
   "RAG_MODE_STANDARD": "RAG tiêu chuẩn",
   "RAG_MODE_PHISON_KM": "KV Cache aiDAPTIV+",
   "PHISON_KM_CONTEXT_HINT": "KV Cache aiDAPTIV+ yêu cầu kích thước ngữ cảnh ít nhất là 16384.",
-  "PHISON_KM_UNAVAILABLE_BUILD_HINT": "Bật bản dựng Llama.cpp Phison aiDAPTIV+ (giảm tải sang SSD) để sử dụng tính năng này.",
+  "PHISON_KM_UNAVAILABLE_BACKEND_HINT": "Chọn backend Llama.cpp để sử dụng tính năng này.",
   "PHISON_KM_UNAVAILABLE_CONTEXT_HINT": "Kích thước ngữ cảnh tối đa của mô hình này thấp hơn mức 16384 mà KV Cache aiDAPTIV+ yêu cầu.",
   "ANSWER_METRICS": "Chỉ số",
   "ANSWER_FONT_SIZE": "Cỡ chữ",

@@ -382,7 +382,7 @@ const effectiveRagMode = computed(() => (textInference.isPhisonKmRag ? 'phisonKm
 const retrievalModeUnavailableReason = computed(() => {
   if (textInference.phisonKmAvailable) return ''
   return textInference.kmContextFloorReachable
-    ? i18nState.PHISON_KM_UNAVAILABLE_BUILD_HINT
+    ? i18nState.PHISON_KM_UNAVAILABLE_BACKEND_HINT
     : i18nState.PHISON_KM_UNAVAILABLE_CONTEXT_HINT
 })
 const advancedMode = computed(() => activeChatPreset.value?.advancedMode ?? false)

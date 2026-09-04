@@ -358,7 +358,7 @@
   "RAG_MODE_STANDARD": "標準 RAG",
   "RAG_MODE_PHISON_KM": "aiDAPTIV+ KV Cache",
   "PHISON_KM_CONTEXT_HINT": "aiDAPTIV+ KV Cache には 16384 以上のコンテキストサイズが必要です。",
-  "PHISON_KM_UNAVAILABLE_BUILD_HINT": "この機能を使用するには、Phison aiDAPTIV+（SSD オフロード）Llama.cpp ビルドを有効にしてください。",
+  "PHISON_KM_UNAVAILABLE_BACKEND_HINT": "この機能を使用するには Llama.cpp バックエンドを選択してください。",
   "PHISON_KM_UNAVAILABLE_CONTEXT_HINT": "このモデルの最大コンテキストサイズは、aiDAPTIV+ KV Cache に必要な 16384 を下回っています。",
   "ANSWER_METRICS": "メトリクス",
   "ANSWER_FONT_SIZE": "フォントサイズ",

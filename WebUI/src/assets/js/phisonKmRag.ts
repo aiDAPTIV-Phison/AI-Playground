@@ -103,17 +103,19 @@ export function createPhisonKmRag(deps: PhisonKmRagDeps) {
   // Whether the Phison KM option is fully ACTIVE (controls ENABLED state):
   //   1. Preset advertises KM support (supportsPhisonKmRag)
   //   2. llamaCPP backend is selected
-  //   3. ssd-offload build is the active variant
-  //   4. Phison artifact is installed on disk
-  //   5. The active model's context ceiling can actually reach the KM floor
+  //   3. The active model's context ceiling can actually reach the KM floor
+  //
+  // Deliberately NOT gated on the ssd-offload build variant or on the Phison
+  // artifact being on disk. KM only ever talks to the llama.cpp server over stock
+  // endpoints — /tokenize for group sizing (langchainPhisonKm.groupChunks) and
+  // /v1/chat/completions for prefix warmup (langchainPhisonKm.warmupKVCache) — and
+  // the KV-cache reuse it depends on is upstream llama.cpp prefix caching. The
+  // aiDAPTIV+ build makes that reuse cheaper on huge models; it is not what makes
+  // KM work, so the standard build serves merged-group retrieval just as well.
   const phisonKmAvailable = computed(
     () =>
       deps.getActivePreset()?.supportsPhisonKmRag === true &&
       deps.backend.value === 'llamaCPP' &&
-      deps.backendServices.llamaCppBuildVariant === 'ssd-offload' &&
-      (deps.backendServices.info.find((s) => s.serviceName === 'llamacpp-backend')
-        ?.llamaCppPhisonArtifactReady ??
-        false) &&
       kmContextFloorReachable.value,
   )
 

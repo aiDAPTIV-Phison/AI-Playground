@@ -358,7 +358,7 @@
   "RAG_MODE_STANDARD": "Standard-RAG",
   "RAG_MODE_PHISON_KM": "aiDAPTIV+ KV-Cache",
   "PHISON_KM_CONTEXT_HINT": "aiDAPTIV+ KV-Cache erfordert eine Kontextgröße von mindestens 16384.",
-  "PHISON_KM_UNAVAILABLE_BUILD_HINT": "Aktivieren Sie den Phison aiDAPTIV+ (SSD-Offload)-Llama.cpp-Build, um diese Funktion zu verwenden.",
+  "PHISON_KM_UNAVAILABLE_BACKEND_HINT": "Wählen Sie das Llama.cpp-Backend, um diese Funktion zu verwenden.",
   "PHISON_KM_UNAVAILABLE_CONTEXT_HINT": "Die maximale Kontextgröße dieses Modells liegt unter den für aiDAPTIV+ KV-Cache erforderlichen 16384.",
   "ANSWER_METRICS": "Metriken",
   "ANSWER_FONT_SIZE": "Schriftgröße",

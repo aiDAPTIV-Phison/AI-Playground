@@ -358,7 +358,7 @@
   "RAG_MODE_STANDARD": "RAG Standar",
   "RAG_MODE_PHISON_KM": "KV Cache aiDAPTIV+",
   "PHISON_KM_CONTEXT_HINT": "KV Cache aiDAPTIV+ memerlukan ukuran konteks minimal 16384.",
-  "PHISON_KM_UNAVAILABLE_BUILD_HINT": "Aktifkan build Llama.cpp Phison aiDAPTIV+ (offload SSD) untuk menggunakan fitur ini.",
+  "PHISON_KM_UNAVAILABLE_BACKEND_HINT": "Pilih backend Llama.cpp untuk menggunakan fitur ini.",
   "PHISON_KM_UNAVAILABLE_CONTEXT_HINT": "Ukuran konteks maksimum model ini lebih kecil dari 16384 yang diperlukan oleh KV Cache aiDAPTIV+.",
   "ANSWER_METRICS": "Metrik",
   "ANSWER_FONT_SIZE": "Ukuran Font",
